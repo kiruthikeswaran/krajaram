@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kiruthikeswaran Rajaram</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     /* General Reset */
     * {
@@ -24,95 +24,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px;
+      padding: 15px 20px;
+      margin: 20px;
       background: #333;
       color: white;
+      border-radius: 8px;
     }
 
     .logo {
-      font-size: 1rem;
-      font-weight: bold;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      flex: 1;
-      max-width: 600px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.3s;
-      text-align: center;
-      flex: 1;
-    }
-
-    nav a:hover {
-      color: #007bff;
-    }
-
-    .social-icons {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .social-icons img {
-      width: 24px;
-      height: 24px;
-      transition: transform 0.3s;
-    }
-
-    .social-icons img:hover {
-      transform: scale(1.1);
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      cursor: pointer;
-    }
-
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background: white;
-    }
-
-    .menu {
-      display: flex;
-      align-items: center;
-    }
-
-    @media (max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        background: #333;
-        position: absolute;
-        top: 75px;
-        right: 20px;
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      }
-
-      .menu.active {
-        display: flex;
-      }
-
-      nav {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
+      font-size: 1.5rem;
+      font-weight: 300;
+      text-transform: capitalize;
+      line-height: 1.2;
     }
 
     .container {
@@ -191,6 +114,39 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Right-side Navigator Bar */
+    .navigator {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background: #333;
+      padding: 20px;
+      border-radius: 8px 0 0 8px;
+      box-shadow: -2px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .navigator a {
+      display: block;
+      margin-bottom: 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+      text-align: center;
+    }
+
+    .navigator a:hover {
+      color: #007bff;
+      transform: scale(1.05);
+    }
+
+    .navigator img {
+      width: 24px;
+      height: 24px;
+      margin: 10px auto;
+    }
   </style>
 </head>
 <body>
@@ -198,28 +154,22 @@
   <!-- Header Section -->
   <header>
     <div class="logo">Kiruthikeswaran Rajaram - Design Engineer, M.A.E.</div>
-    <div class="menu-toggle" id="menu-toggle">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="menu" id="menu">
-      <nav>
-        <a href="#home">Home</a>
-        <a href="resume.html" target="_blank">Resume</a>
-        <a href="giving-back.html" target="_blank">Giving Back</a>
-        <a href="contact.html" target="_blank">Contact</a>
-      </nav>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/kiruthikeswaran" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-        </a>
-        <a href="https://github.com/kiruthikeswaran" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
-        </a>
-      </div>
-    </div>
   </header>
+
+  <!-- Right Navigator Bar -->
+  <div class="navigator">
+    <a href="#home">Home</a>
+    <a href="resume.html" target="_blank">Resume</a>
+    <a href="giving-back.html" target="_blank">Giving Back</a>
+    <a href="contact.html" target="_blank">Contact</a>
+    <a href="#about">About</a>
+    <a href="https://www.linkedin.com/in/kiruthikeswaran" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+    </a>
+    <a href="https://github.com/kiruthikeswaran" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+    </a>
+  </div>
 
   <!-- Introduction Section -->
   <div class="container">
@@ -264,14 +214,5 @@
   <footer>
     <p>&copy; 2024 Kiruthikeswaran Rajaram. Built with dedication and creativity. <a href="mailto:krish@example.com">Contact Me</a></p>
   </footer>
-
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
