@@ -24,7 +24,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
+      padding: 15px;
       background: #333;
       color: white;
     }
@@ -36,8 +36,9 @@
 
     nav {
       display: flex;
-      align-items: center;
-      gap: 20px;
+      justify-content: space-between;
+      flex: 1;
+      max-width: 600px;
     }
 
     nav a {
@@ -45,6 +46,8 @@
       text-decoration: none;
       font-size: 1rem;
       transition: color 0.3s;
+      text-align: center;
+      flex: 1;
     }
 
     nav a:hover {
@@ -91,7 +94,7 @@
         flex-direction: column;
         background: #333;
         position: absolute;
-        top: 60px;
+        top: 75px;
         right: 20px;
         border-radius: 5px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
