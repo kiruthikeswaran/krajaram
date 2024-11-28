@@ -3,116 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kirthikeswaran Rajaram - Portfolio</title>
+  <title>Kirthikeswaran Rajaram Portfolio</title>
   <style>
-    /* General Styles */
-    body {
+    /* General Reset */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
       color: #333;
     }
 
-    a {
-      text-decoration: none;
-    }
-
-    h1, h2 {
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .hero-section {
-      background: url('https://github.com/kiruthikeswaran/krajaram/blob/main/initial-rk-letter-logo-design-vector-template-abstract-script-letter-rk-logo-design-2E19A91-removebg-preview.png') no-repeat center center/cover;
+    header {
+      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: white;
       text-align: center;
-      padding: 100px 20px;
       position: relative;
     }
 
-    .overlay {
+    header::after {
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
     }
 
-    .navbar {
+    header .content {
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+
+    header .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ffcc00;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 40px;
-      position: relative;
-      z-index: 2;
+      background: rgba(0, 0, 0, 0.7);
     }
 
-    .navbar .logo img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
+    nav .logo {
+      font-size: 1.5rem;
+      color: white;
+      font-weight: bold;
     }
 
-    .nav-links {
+    nav ul {
       list-style: none;
       display: flex;
       gap: 20px;
     }
 
-    .nav-links a {
+    nav ul li a {
       color: white;
+      text-decoration: none;
       font-weight: bold;
       transition: color 0.3s;
     }
 
-    .nav-links a:hover {
+    nav ul li a:hover {
       color: #ffcc00;
     }
 
-    .hero-content {
-      margin-top: 50px;
-      z-index: 2;
-      position: relative;
+    section {
+      padding: 50px 20px;
+      text-align: center;
     }
 
-    .hero-content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
 
-    .social-icons {
-      display: flex;
-      justify-content: center;
+    section p {
+      margin-bottom: 30px;
+    }
+
+    .portfolio .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
-      margin-top: 20px;
     }
 
-    .social-icons a img {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.3s;
+    .portfolio .card {
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
     }
 
-    .social-icons a img:hover {
-      transform: scale(1.2);
+    .portfolio .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .portfolio .card h3 {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .portfolio .card p {
+      font-size: 0.9rem;
     }
 
     footer {
       background: #333;
       color: white;
+      padding: 20px 10px;
       text-align: center;
-      padding: 10px;
-      margin-top: 50px;
+    }
+
+    footer .social-icons {
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    footer .social-icons a img {
+      width: 30px;
+      height: 30px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <header class="hero-section">
-    <div class="overlay"></div>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="https://via.placeholder.com/100" alt="Logo">
-      </div>
-      <ul class="nav-links">
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <div class="logo">Kirthikeswaran Rajaram</div>
+      <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#resume">Resume</a></li>
@@ -120,24 +179,43 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="hero-content">
-      <h1>Kirthikeswaran Rajaram</h1>
+    <div class="content">
+      <h1>Welcome to My Portfolio</h1>
       <p>Master’s Student | Aerospace Engineer | Design Enthusiast</p>
-      <div class="social-icons">
-        <a href="https://linkedin.com" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-        </a>
-        <a href="https://github.com" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
-        </a>
-        <a href="https://scholar.google.com" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/2965/2965304.png" alt="Google Scholar">
-        </a>
-      </div>
+      <a href="#portfolio" class="btn">Explore My Work</a>
     </div>
   </header>
 
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <h2>My Portfolio</h2>
+    <p>Here are some of the projects I’ve worked on recently.</p>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/600x400" alt="Project 1">
+        <h3>Project 1</h3>
+        <p>Details about the first project go here.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600x400" alt="Project 2">
+        <h3>Project 2</h3>
+        <p>Details about the second project go here.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600x400" alt="Project 3">
+        <h3>Project 3</h3>
+        <p>Details about the third project go here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
   <footer>
+    <div class="social-icons">
+      <a href="https://linkedin.com"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
+      <a href="https://github.com"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"></a>
+      <a href="https://scholar.google.com"><img src="https://cdn-icons-png.flaticon.com/512/2965/2965304.png" alt="Google Scholar"></a>
+    </div>
     <p>&copy; 2024 Kirthikeswaran Rajaram. All Rights Reserved.</p>
   </footer>
 </body>
