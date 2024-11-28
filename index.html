@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KIRUTHIKESWARAN RAJARAM Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+  <title>Portfolio - Kiruthikeswaran Rajaram</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* General Reset */
     * {
@@ -14,125 +14,85 @@
     }
 
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Roboto', sans-serif;
       line-height: 1.6;
-      color: #000000;
+      color: #333;
+      background-color: #f4f4f9;
     }
 
     header {
+      background: #333;
+      color: white;
       padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #f8f9fa;
-      border-bottom: 1px solid #ddd;
+      text-align: center;
     }
 
-    .name {
-      font-size: 1.2rem;
-      font-weight: 400;
-      text-align: center;
-      margin-right: 40px;
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1rem;
     }
 
     nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    nav a {
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease-in-out;
-    }
-
-    nav a:hover {
-      color: #007bff;
-    }
-
-    .social-icons img {
-      width: 30px;
-      height: 30px;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .social-icons img:hover {
-      transform: scale(1.2);
-    }
-
-    .hero-image {
-      background: url('https://img.freepik.com/premium-vector/dark-concrete-background-with-grunge-effect_278222-9629.jpg') no-repeat center center/cover;
-      height: 50vh;
-      padding: 0 20px;
-      position: relative;
       margin-top: 20px;
     }
 
-    .hero-image .hero-message {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-    }
-
-    .hero-image .hero-message h1 {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .hero-image .hero-message p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
-
-    .hero-image .hero-message .btn {
-      padding: 10px 20px;
-      background: #ffcc00;
-      color: black;
+    nav a {
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 1rem;
+      margin: 0 15px;
+      padding: 10px 15px;
       border-radius: 5px;
-      transition: all 0.3s ease-in-out;
+      transition: background-color 0.3s ease;
     }
 
-    .hero-image .hero-message .btn:hover {
-      background: black;
-      color: white;
+    nav a:hover {
+      background: #007bff;
     }
 
-    .projects {
-      padding: 40px 20px;
+    .container {
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .intro {
       text-align: center;
+      margin-bottom: 40px;
     }
 
-    .projects h2 {
+    .intro h2 {
       font-size: 2rem;
-      margin-bottom: 20px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 1.2rem;
+      color: #555;
     }
 
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
-      padding: 20px 0;
     }
 
     .project-card {
       background: white;
-      border: 1px solid #ddd;
       border-radius: 10px;
-      overflow: hidden;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     }
 
     .project-card img {
@@ -142,84 +102,92 @@
     }
 
     .project-card h3 {
-      font-size: 1.2rem;
-      padding: 10px;
-      margin: 0;
+      font-size: 1.5rem;
+      margin: 15px;
+      color: #007bff;
     }
 
     .project-card p {
-      font-size: 0.9rem;
-      padding: 10px;
-      color: #666;
+      font-size: 1rem;
+      margin: 0 15px 15px;
+      color: #555;
     }
 
     footer {
       background: #333;
       color: white;
       text-align: center;
-      padding: 20px 10px;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <!-- Top Header Section -->
+
+  <!-- Header Section -->
   <header>
-    <div class="name">
-      KIRUTHIKESWARAN RAJARAM - AEROSPACE ENGINEER, M.A.E.<br>
-    </div>
+    <h1>Kiruthikeswaran Rajaram</h1>
+    <p>Aerospace Engineer | Innovator | Problem Solver</p>
     <nav>
       <a href="#home">Home</a>
-      <a href="resume.html" target="_blank">Resume</a>
-      <a href="giving-back.html" target="_blank">Giving Back</a>
-      <a href="contact.html" target="_blank">Contact</a>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/kiruthikeswaran" target="_blank">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJQQm9um_IRI826jnEDmXGE8w0CEM3I4AHIWJ5G3FQacedB8lYZ0LVW_57754HmeJtMHk&usqp=CAU" alt="LinkedIn">
-        </a>
-        <a href="https://github.com/kiruthikeswaran" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
-        </a>
-        <a href="https://scholar.google.com" target="_blank">
-          <img src="data:image/png;base64,iVBOR..." alt="Google Scholar">
-        </a>
-      </div>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero Image Section -->
-  <section class="hero-image">
-    <div class="hero-message">
-      <h1>Project Portfolio</h1>
-      <p>Exploring the World of Aerospace Engineering</p>
-      <a href="portfolio.html" class="btn" target="_blank" id="explore-btn">Explore My Work</a>
+  <!-- Introduction Section -->
+  <div class="container">
+    <div class="intro">
+      <h2>Welcome to My Portfolio</h2>
+      <p>Discover my work, innovations, and projects in aerospace engineering and beyond.</p>
     </div>
-  </section>
 
-  <!-- Projects Section -->
-  <section class="projects" id="projects">
-    <h2>Recent Showcase</h2>
+    <!-- Project Grid Section -->
     <div class="project-grid">
+      <!-- Project 1 -->
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x200" alt="C-17 Globemaster III Research">
-        <h3>C-17 Globemaster III Research</h3>
-        <p>Optimized wing capacity and addressed flight control issues using ANSYS simulation.</p>
+        <img src="https://via.placeholder.com/400x200" alt="C-17 Globemaster III">
+        <h3>C-17 Globemaster III</h3>
+        <p>Optimized wing capacity and solved flight control issues using advanced ANSYS simulations.</p>
       </div>
+
+      <!-- Project 2 -->
       <div class="project-card">
         <img src="https://via.placeholder.com/400x200" alt="Winglet Efficiency Design">
         <h3>Winglet Efficiency Design</h3>
-        <p>Analyzed and improved winglet designs to enhance overall aerodynamic efficiency.</p>
+        <p>Enhanced aerodynamic efficiency by redesigning winglets for modern aircraft.</p>
       </div>
+
+      <!-- Project 3 -->
       <div class="project-card">
         <img src="https://via.placeholder.com/400x200" alt="3D Aerospace Prototypes">
         <h3>3D Aerospace Prototypes</h3>
-        <p>Created intricate 3D models for aerospace components, ensuring precision and reliability.</p>
+        <p>Created precise 3D models for aerospace components, ensuring reliability and accuracy.</p>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Structural Analysis">
+        <h3>Structural Analysis</h3>
+        <p>Performed structural analysis to enhance safety and performance in aerospace systems.</p>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- Footer Section -->
   <footer>
-    <p>&copy; 2024 KIRUTHIKESWARAN RAJARAM. All Rights Reserved.</p>
+    <p>&copy; 2024 Kiruthikeswaran Rajaram. Built with dedication and creativity. <a href="mailto:krish@example.com">Contact Me</a></p>
   </footer>
+
 </body>
 </html>
