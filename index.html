@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Krish's Portfolio</title>
+  <title>Kirthikeswaran Rajaram - Portfolio</title>
   <style>
     /* General Styles */
     body {
@@ -21,11 +21,20 @@
     }
 
     .hero-section {
-      background: linear-gradient(to right, #1e90ff, #00bcd4);
+      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
       color: white;
       text-align: center;
-      padding: 50px 20px;
-      animation: fadeIn 1.5s ease-in-out;
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
     }
 
     .navbar {
@@ -33,6 +42,14 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
     }
 
     .nav-links {
@@ -53,82 +70,30 @@
 
     .hero-content {
       margin-top: 50px;
+      z-index: 2;
+      position: relative;
     }
 
-    .hero-content h1 span {
-      color: #ffcc00;
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
     }
 
-    .hero-content .btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #ffcc00;
-      color: black;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .hero-content .btn:hover {
-      background: #ffa500;
-    }
-
-    .about-section, .contact-section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .projects-section {
-      background: #f9f9f9;
-      padding: 50px 20px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .social-icons {
+      display: flex;
+      justify-content: center;
       gap: 20px;
+      margin-top: 20px;
     }
 
-    .project-card {
-      background: white;
-      border-radius: 5px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+    .social-icons a img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-
-    form .btn {
-      padding: 10px 20px;
-      background: #1e90ff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    form .btn:hover {
-      background: #00bcd4;
+    .social-icons a img:hover {
+      transform: scale(1.2);
     }
 
     footer {
@@ -136,96 +101,44 @@
       color: white;
       text-align: center;
       padding: 10px;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
   <header class="hero-section">
+    <div class="overlay"></div>
     <nav class="navbar">
-      <div class="logo">Krish's Portfolio</div>
+      <div class="logo">
+        <img src="https://via.placeholder.com/100" alt="Logo">
+      </div>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#giving-back">Giving Back</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="hero-content">
-      <h1>Hi, I'm <span>Krish</span></h1>
-      <p>Aspiring Aerospace Engineer & Design Enthusiast</p>
-      <a href="#projects" class="btn">Explore My Work</a>
+      <h1>Kirthikeswaran Rajaram</h1>
+      <p>Master’s Student | Aerospace Engineer | Design Enthusiast</p>
+      <div class="social-icons">
+        <a href="https://linkedin.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+        </a>
+        <a href="https://scholar.google.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/2965/2965304.png" alt="Google Scholar">
+        </a>
+      </div>
     </div>
   </header>
 
-  <section id="about" class="about-section">
-    <h2>About Me</h2>
-    <p>
-      I am a master’s student in Aerospace Engineering, with a strong foundation in design and a passion for research. Currently focused on optimizing C-17 Globemaster III designs, I specialize in enhancing wing capacity and addressing flight control challenges.
-    </p>
-    <p>
-      As a Design Engineer, I enjoy solving complex problems with innovative solutions. Let's work together to achieve exceptional results.
-    </p>
-  </section>
-
-  <section id="projects" class="projects-section">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400" alt="Project 1">
-        <h3>C-17 Globemaster III Research</h3>
-        <p>Optimized wing capacity and addressed flight control issues using ANSYS simulation.</p>
-      </div>
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400" alt="Project 2">
-        <h3>Aircraft Winglet Design</h3>
-        <p>Analyzed efficiency improvements with modified winglets while preserving the aircraft body.</p>
-      </div>
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400" alt="Project 3">
-        <h3>3D Design Prototypes</h3>
-        <p>Developed intricate 3D models for aerospace components, ensuring precision and functionality.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <p>Have a project in mind or want to collaborate? Feel free to reach out!</p>
-    <form action="https://formspree.io/f/{your-form-id}" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
-
   <footer>
-    <p>&copy; 2024 Krish. All Rights Reserved.</p>
+    <p>&copy; 2024 Kirthikeswaran Rajaram. All Rights Reserved.</p>
   </footer>
-
-  <script>
-    // Smooth scroll animation for navigation links
-    document.querySelectorAll('.nav-links a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    console.log("Portfolio animations active!");
-  </script>
 </body>
 </html>
