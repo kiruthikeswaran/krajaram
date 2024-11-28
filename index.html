@@ -29,6 +29,7 @@
       background: #333;
       color: white;
       border-radius: 8px;
+      position: relative;
     }
 
     .logo {
@@ -38,114 +39,86 @@
       line-height: 1.2;
     }
 
-    .container {
-      padding: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
+    /* Menu Bar */
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
     }
 
-    .intro {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .intro h2 {
-      font-size: 2rem;
-      color: #222;
-      margin-bottom: 10px;
-    }
-
-    .intro p {
-      font-size: 1.2rem;
-      color: #555;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .project-card {
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .project-card img {
+    .menu {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
       width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .project-card h3 {
-      font-size: 1.5rem;
-      margin: 15px;
-      color: #007bff;
-    }
-
-    .project-card p {
-      font-size: 1rem;
-      margin: 0 15px 15px;
-      color: #555;
-    }
-
-    footer {
       background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 0;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
-    footer a {
-      color: #007bff;
-      text-decoration: none;
-      font-weight: bold;
+    .menu.active {
+      display: flex;
     }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Right-side Navigator Bar */
-    .navigator {
-      position: fixed;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      background: #333;
-      padding: 20px;
-      border-radius: 8px 0 0 8px;
-      box-shadow: -2px 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .navigator a {
-      display: block;
-      margin-bottom: 15px;
+    .menu a {
       color: white;
       text-decoration: none;
       font-size: 1rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-      text-align: center;
+      margin: 10px 0;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .navigator a:hover {
+    .menu a:hover {
       color: #007bff;
-      transform: scale(1.05);
     }
 
-    .navigator img {
-      width: 24px;
-      height: 24px;
-      margin: 10px auto;
+    .menu img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .menu a.logo-link {
+      margin: 10px 0;
+    }
+
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      .menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        gap: 20px;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: auto;
+        background: transparent;
+      }
+
+      .menu a {
+        margin: 0;
+      }
+
+      .menu img {
+        margin: 0;
+      }
     }
   </style>
 </head>
@@ -154,22 +127,25 @@
   <!-- Header Section -->
   <header>
     <div class="logo">Kiruthikeswaran Rajaram - Design Engineer, M.A.E.</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="menu" id="menu">
+      <a href="#home">Home</a>
+      <a href="resume.html" target="_blank">Resume</a>
+      <a href="giving-back.html" target="_blank">Giving Back</a>
+      <a href="contact.html" target="_blank">Contact</a>
+      <a href="#about">About</a>
+      <a href="https://www.linkedin.com/in/kiruthikeswaran" target="_blank" class="logo-link">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/kiruthikeswaran" target="_blank" class="logo-link">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+      </a>
+    </div>
   </header>
-
-  <!-- Right Navigator Bar -->
-  <div class="navigator">
-    <a href="#home">Home</a>
-    <a href="resume.html" target="_blank">Resume</a>
-    <a href="giving-back.html" target="_blank">Giving Back</a>
-    <a href="contact.html" target="_blank">Contact</a>
-    <a href="#about">About</a>
-    <a href="https://www.linkedin.com/in/kiruthikeswaran" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-    </a>
-    <a href="https://github.com/kiruthikeswaran" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
-    </a>
-  </div>
 
   <!-- Introduction Section -->
   <div class="container">
@@ -214,5 +190,14 @@
   <footer>
     <p>&copy; 2024 Kiruthikeswaran Rajaram. Built with dedication and creativity. <a href="mailto:krish@example.com">Contact Me</a></p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
