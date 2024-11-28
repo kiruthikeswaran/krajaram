@@ -18,6 +18,11 @@
       line-height: 1.6;
       color: #333;
       background-color: #f4f4f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
 
     header {
@@ -30,6 +35,8 @@
       color: white;
       border-radius: 8px;
       position: relative;
+      width: 100%;
+      max-width: 1200px;
     }
 
     .logo {
@@ -91,10 +98,6 @@
       height: 20px;
     }
 
-    .menu a.logo-link {
-      margin: 10px 0;
-    }
-
     @media (min-width: 768px) {
       .menu-toggle {
         display: none;
@@ -115,10 +118,92 @@
       .menu a {
         margin: 0;
       }
+    }
 
-      .menu img {
-        margin: 0;
-      }
+    /* Introduction Section */
+    .container {
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 40px;
+      color: white;
+      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .intro h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 1.2rem;
+    }
+
+    /* Project Grid */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-card h3 {
+      font-size: 1.5rem;
+      margin: 15px;
+      color: #007bff;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      margin: 0 15px 15px;
+      color: #555;
+    }
+
+    /* Footer Section */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    footer a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -138,11 +223,11 @@
       <a href="giving-back.html" target="_blank">Giving Back</a>
       <a href="contact.html" target="_blank">Contact</a>
       <a href="#about">About</a>
-      <a href="https://www.linkedin.com/in/kiruthikeswaran" target="_blank" class="logo-link">
-        <img src="data:image/png;base64,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" alt="LinkedIn">
+      <a href="https://www.linkedin.com/in/kiruthikeswaran" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
       </a>
-      <a href="https://github.com/kiruthikeswaran" target="_blank" class="logo-link">
-        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freeiconspng.com%2Fimg%2F38976&psig=AOvVaw2Vt4bC4ma1cjpR4eYEbN8S&ust=1732921001901000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOiezJeZgIoDFQAAAAAdAAAAABAK" alt="GitHub">
+      <a href="https://github.com/kiruthikeswaran" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
       </a>
     </div>
   </header>
