@@ -1,105 +1,63 @@
 <!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krithik - Aerospace Engineer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            min-height: 100vh;
-            background: #1a1a1a;
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #00ffff;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: #4dc3ff;
-        }
-
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .bubble {
-            position: absolute;
-            background: rgba(0, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 8s infinite;
-            pointer-events: none;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            50% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-100px) scale(1);
-                opacity: 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="content">
-        <h1>Krithik</h1>
-        <h2>AEROSPACE ENGINEER , BUT VELAI THEDUTHAL MUYARCHI !!!!<h2>
-        <p>Welcome to my personal space! I'm passionate about pushing the boundaries of aerospace technology and innovation.</p>
-        <p>With expertise in aerodynamics, propulsion systems, and spacecraft design, I work on creating the future of aviation and space exploration.</p>
-        <p>My journey in aerospace engineering has been driven by a fascination with flight and a desire to contribute to humanity's reach for the stars.</p>
+  <header class="hero-section">
+    <nav class="navbar">
+      <div class="logo">Yash Kumar</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>Hello, I'm <span>Yash Kumar</span></h1>
+      <p>Designer & Developer passionate about creating user-centric digital experiences.</p>
+      <a href="#projects" class="btn">View Projects</a>
     </div>
+  </header>
 
-    <script>
-        function createBubble() {
-            const bubble = document.createElement('div');
-            bubble.className = 'bubble';
-            
-            const size = Math.random() * 60 + 20;
-            bubble.style.width = '${size}px';
-            bubble.style.height = '${size}px';
-            
-            bubble.style.left = '${Math.random() * 100}%';
-            bubble.style.animationDuration = '${Math.random() * 4 + 6}s';
-            
-            document.body.appendChild(bubble);
-            
-            setTimeout(() => {
-                bubble.remove();
-            }, 8000);
-        }
+  <section id="about" class="about-section">
+    <h2>About Me</h2>
+    <p>I am a creative professional with expertise in design and development. I strive to combine aesthetics with functionality to create impactful digital experiences.</p>
+  </section>
 
-        setInterval(createBubble, 300);
-    </script>
+  <section id="projects" class="projects-section">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="assets/images/project1.png" alt="Project 1">
+        <h3>Project Title 1</h3>
+        <p>Short description of the project.</p>
+      </div>
+      <div class="project-card">
+        <img src="assets/images/project2.png" alt="Project 2">
+        <h3>Project Title 2</h3>
+        <p>Short description of the project.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/{your-form-id}" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Yash Kumar. All Rights Reserved.</p>
+  </footer>
+  <script src="js/script.js"></script>
 </body>
 </html>
