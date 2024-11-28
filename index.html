@@ -138,31 +138,39 @@
   <!-- Header Section -->
   <header>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      background-color: #333;
+      padding: 10px 20px;
+      background: #333;
       color: white;
+      font-family: 'Roboto', sans-serif;
     }
 
-    .brand {
+    .logo {
       font-size: 1.5rem;
       font-weight: bold;
+      color: #fff;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 15px;
     }
 
     nav a {
-      color: white;
+      color: #fff;
       text-decoration: none;
       font-size: 1rem;
-      transition: color 0.3s ease-in-out;
+      transition: color 0.3s;
     }
 
     nav a:hover {
@@ -172,27 +180,81 @@
     .social-icons {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 10px;
     }
 
     .social-icons img {
-      width: 25px;
-      height: 25px;
-      transition: transform 0.3s ease-in-out;
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s;
     }
 
     .social-icons img:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
+    }
+
+    /* Responsive menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: white;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
     }
   </style>
-  <div class="brand">
-    Kiruthikeswaran Rajaram - Design Engineer, M.A.E.
+
+  <div class="logo">Kiruthikeswaran Rajaram - Design Engineer, M.A.E.</div>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="resume.html" target="_blank">Resume</a>
-    <a href="giving-back.html" target="_blank">Giving Back</a>
-    <a href="contact.html" target="_blank">Contact</a>
+
+  <div class="menu" id="menu">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="resume.html" target="_blank">Resume</a>
+      <a href="giving-back.html" target="_blank">Giving Back</a>
+      <a href="contact.html" target="_blank">Contact</a>
+    </nav>
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/kiruthikeswaran" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
@@ -201,7 +263,16 @@
         <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
       </a>
     </div>
-  </nav>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
 </header>
 
 
