@@ -28,15 +28,14 @@
 
     /* Header Section */
     header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-  background: white; /* You can remove this line if you don't need a background color */
-  color: #333;
-  width: 100%;
-  max-width: 1200px;
-}
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+      color: #333;
+      width: 100%;
+      max-width: 1200px;
+    }
 
     .logo {
       font-size: 1.5rem;
@@ -49,43 +48,15 @@
       align-items: center;
     }
 
-    .menu-toggle {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      cursor: pointer;
-      margin-right: 15px;
-    }
-
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background: #333;
-    }
-
     .menu {
-      display: none;
-      position: absolute;
-      top: 55px;
-      right: 15px;
-      background: #333;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 0;
-      border-radius: 0 0 8px 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .menu.active {
       display: flex;
+      gap: 20px;
     }
 
     .menu a {
-      color: white;
+      color: #333;
       text-decoration: none;
       font-size: 1rem;
-      margin: 8px 0;
-      transition: color 0.3s ease;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -96,36 +67,8 @@
     }
 
     .menu img {
-      width: 25px;
-      height: 25px;
-    }
-
-    /* Media Query */
-    @media (min-width: 768px) {
-      .menu-toggle {
-        display: none;
-      }
-
-      .menu {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        gap: 20px;
-        padding: 0;
-        box-shadow: none;
-        border-radius: 0;
-        background: transparent;
-        margin: 0;
-      }
-
-      .menu a {
-        margin: 0;
-        color: #333;
-      }
-
-      .menu a:hover {
-        color: #007bff;
-      }
+      width: 20px;
+      height: 20px;
     }
 
     /* Introduction Section */
@@ -221,12 +164,7 @@
   <header>
     <div class="logo">Kiruthikeswaran Rajaram - Design Engineer, M.A.E.</div>
     <div class="menu-container">
-      <div class="menu-toggle" id="menu-toggle">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <nav class="menu" id="menu">
+      <nav class="menu">
         <a href="#home">Home</a>
         <a href="resume.html" target="_blank">Resume</a>
         <a href="giving-back.html" target="_blank">Giving Back</a>
@@ -272,13 +210,5 @@
     <p>&copy; 2024 Kiruthikeswaran Rajaram. Built with dedication and creativity. <a href="mailto:krish@example.com">Contact Me</a></p>
   </footer>
 
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
