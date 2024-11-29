@@ -70,7 +70,7 @@
       height: 500px;
       object-fit: cover;
       filter: brightness(0.5);
-      margin: 0 25px; /* Adds padding-like effect to the sides */
+      margin: 0 25px;
     }
 
     .hero .overlay-text {
@@ -96,7 +96,7 @@
     }
 
     .project-header h2 {
-      font-size: 2.2rem;
+      font-size: 2.5rem; /* Increased font size */
       margin-bottom: 10px;
     }
 
@@ -137,6 +137,65 @@
       color: #555;
     }
 
+    .explore-btn {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .explore-btn a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .explore-btn a:hover {
+      background-color: #0056b3;
+    }
+
+    .recent-showcase {
+      margin-top: 50px;
+    }
+
+    .recent-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .recent-header h2 {
+      font-size: 2.5rem;
+    }
+
+    .recent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .recent-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .recent-card h3 {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      color: #007bff;
+    }
+
+    .recent-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
     footer {
       background: #333;
       color: white;
@@ -166,12 +225,6 @@
       <a href="giving-back.html" target="_blank">Giving Back</a>
       <a href="contact.html" target="_blank">Contact</a>
       <a href="#about">About</a>
-      <a href="https://www.linkedin.com/in/kiruthikeswaran" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-      </a>
-      <a href="https://github.com/kiruthikeswaran" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
-      </a>
     </nav>
   </header>
 
@@ -182,11 +235,9 @@
 
   <div class="container">
     <div class="project-header">
-      <h2>RECENT SHOWCASE</h2>
+      <h2>ENGINEERING PROJECTS</h2>
     </div>
 
-
-    
     <div class="project-grid">
       <div class="project-card">
         <img src="https://www.aerospaceutah.org/wp-content/uploads/C17Aadjust.jpg" alt="C-17 Globemaster III">
@@ -198,6 +249,27 @@
         <img src="https://www.aerosociety.com/media/20005/blog-1.jpg?width=500&height=290.55555555555554" alt="CFD Analysis of Winglet Designs on the Boeing 737">
         <h3>Winglet Efficiency Design</h3>
         <p>Optimized winglet designs using CFD to enhance aerodynamic efficiency, reduce drag, and improve fuel performance.</p>
+      </div>
+    </div>
+
+    <div class="explore-btn">
+      <a href="#more-projects">Explore More Projects</a>
+    </div>
+
+    <div class="recent-showcase">
+      <div class="recent-header">
+        <h2>RECENT SHOWCASE</h2>
+      </div>
+
+      <div class="recent-grid">
+        <div class="recent-card">
+          <h3>Publication 1</h3>
+          <p>A study on advanced aerodynamics in modern aircraft.</p>
+        </div>
+        <div class="recent-card">
+          <h3>Publication 2</h3>
+          <p>Innovations in CFD and its application in aerospace engineering.</p>
+        </div>
       </div>
     </div>
   </div>
