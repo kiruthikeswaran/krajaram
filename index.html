@@ -26,19 +26,23 @@
       padding: 10px;
     }
 
-    /* Header Section */
-  header {
+/* Header Section */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #f8f9fa; /* Optional: add a light background */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: add subtle shadow */
+    padding: 25px 50px; /* Added horizontal padding to create margins */
+    color: #333;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the header if using max-width */
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-right: auto; /* Pushes menu to the right */
 }
 
 .menu-container {
@@ -48,24 +52,25 @@
 
 .menu {
     display: flex;
-    align-items: center;
-    gap: 15px; /* Adds space between menu items */
+    gap: 20px;
 }
 
 .menu a {
-    text-decoration: none;
     color: #333;
-    transition: color 0.3s ease;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .menu a:hover {
-    color: #007bff; /* Optional: add hover effect */
+    color: #007bff;
 }
 
 .menu img {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
+    width: 20px;
+    height: 20px;
 }
 
     /* Introduction Section */
