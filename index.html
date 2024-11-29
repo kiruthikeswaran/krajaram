@@ -29,24 +29,22 @@
     header {
       display: flex;
       justify-content: space-between;
-      align-items: stretch;
-      padding: 10px 10px;
-      margin: 10px 0;
-      background: #333;
-      color: white;
+      align-items: center;
+      padding: 15px 20px;
+      background: white;
+      color: #333;
       border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       width: 100%;
       max-width: 1200px;
     }
 
     .logo {
       font-size: 1.5rem;
-      font-weight: 300;
+      font-weight: 400;
       text-transform: capitalize;
-      line-height: 1.2;
     }
 
-    /* Menu Bar */
     .menu-toggle {
       display: flex;
       flex-direction: column;
@@ -57,7 +55,7 @@
     .menu-toggle div {
       width: 25px;
       height: 3px;
-      background: white;
+      background: #333;
     }
 
     .menu {
@@ -94,8 +92,8 @@
     }
 
     .menu img {
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
     }
 
     @media (min-width: 768px) {
@@ -107,7 +105,7 @@
         display: flex;
         position: static;
         flex-direction: row;
-        gap: 15px;
+        gap: 20px;
         padding: 0;
         box-shadow: none;
         border-radius: 0;
@@ -117,6 +115,11 @@
 
       .menu a {
         margin: 0;
+        color: #333;
+      }
+
+      .menu a:hover {
+        color: #007bff;
       }
     }
 
@@ -168,7 +171,7 @@
 
     .project-card img {
       width: 100%;
-      height: 200px;
+      height: 300px; /* Increased height for a larger image */
       object-fit: cover;
     }
 
@@ -243,28 +246,28 @@
     <div class="project-grid">
       <!-- Project 1 -->
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x200" alt="C-17 Globemaster III">
+        <img src="https://via.placeholder.com/400x300" alt="C-17 Globemaster III">
         <h3>C-17 Globemaster III</h3>
         <p>Optimized wing capacity and solved flight control issues using advanced ANSYS simulations.</p>
       </div>
 
       <!-- Project 2 -->
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x200" alt="Winglet Efficiency Design">
+        <img src="https://via.placeholder.com/400x300" alt="Winglet Efficiency Design">
         <h3>Winglet Efficiency Design</h3>
         <p>Enhanced aerodynamic efficiency by redesigning winglets for modern aircraft.</p>
       </div>
 
       <!-- Project 3 -->
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x200" alt="3D Aerospace Prototypes">
+        <img src="https://via.placeholder.com/400x300" alt="3D Aerospace Prototypes">
         <h3>3D Aerospace Prototypes</h3>
         <p>Created precise 3D models for aerospace components, ensuring reliability and accuracy.</p>
       </div>
 
       <!-- Project 4 -->
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x200" alt="Structural Analysis">
+        <img src="https://via.placeholder.com/400x300" alt="Structural Analysis">
         <h3>Structural Analysis</h3>
         <p>Performed structural analysis to enhance safety and performance in aerospace systems.</p>
       </div>
