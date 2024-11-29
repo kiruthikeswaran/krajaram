@@ -18,19 +18,25 @@
       line-height: 1.6;
       color: #333;
       background-color: #f4f4f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 10px;
     }
 
     header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
+      align-items: stretch;
+      padding: 10px 10px;
+      margin: 10px 0;
       background: #333;
       color: white;
-      width: 100vw;
-      position: fixed;
-      top: 0;
-      z-index: 1000;
+      border-radius: 5px;
+      width: 100%;
+      max-width: 1200px;
     }
 
     .logo {
@@ -40,6 +46,7 @@
       line-height: 1.2;
     }
 
+    /* Menu Bar */
     .menu-toggle {
       display: flex;
       flex-direction: column;
@@ -55,7 +62,16 @@
 
     .menu {
       display: none;
+      position: absolute;
+      top: 55px;
+      left: 0;
+      width: 100%;
+      background: #333;
       flex-direction: column;
+      align-items: center;
+      padding: 10px 0;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
     .menu.active {
@@ -65,7 +81,21 @@
     .menu a {
       color: white;
       text-decoration: none;
-      margin: 0 10px;
+      font-size: 1rem;
+      margin: 8px 0;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .menu a:hover {
+      color: #007bff;
+    }
+
+    .menu img {
+      width: 20px;
+      height: 20px;
     }
 
     @media (min-width: 768px) {
@@ -75,62 +105,59 @@
 
       .menu {
         display: flex;
+        position: static;
         flex-direction: row;
+        gap: 15px;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: auto;
+        background: transparent;
+      }
+
+      .menu a {
+        margin: 0;
       }
     }
 
+    /* Introduction Section */
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
     .intro {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      height: 100vh;
+      margin-bottom: 30px;
+      padding: 30px;
       color: white;
-      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
     .intro h2 {
-      font-size: 3rem;
+      font-size: 2.2rem;
       margin-bottom: 10px;
     }
 
     .intro p {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-
-    .intro button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
       font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
-    .intro button:hover {
-      background-color: #0056b3;
-    }
-
+    /* Project Grid */
     .project-grid {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 15px;
-      overflow-x: auto;
-      padding: 0 20px;
     }
 
     .project-card {
       background: white;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      flex: 1;
-      min-width: 300px;
-      max-width: 300px;
+      overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -157,19 +184,34 @@
       color: #555;
     }
 
+    /* Footer Section */
     footer {
       background: #333;
       color: white;
       text-align: center;
       padding: 15px;
       margin-top: 20px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    footer a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
+  <!-- Header Section -->
   <header>
-    <div class="logo">Kiruthikeswaran Rajaram</div>
+    <div class="logo">Kiruthikeswaran Rajaram - Design Engineer, M.A.E.</div>
     <div class="menu-toggle" id="menu-toggle">
       <div></div>
       <div></div>
@@ -181,40 +223,57 @@
       <a href="giving-back.html" target="_blank">Giving Back</a>
       <a href="contact.html" target="_blank">Contact</a>
       <a href="#about">About</a>
+      <a href="https://www.linkedin.com/in/kiruthikeswaran" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/kiruthikeswaran" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+      </a>
     </div>
   </header>
 
-  <div class="intro">
-    <h2>Welcome to My Portfolio</h2>
-    <p>Discover my work, innovations, and projects in aerospace engineering and beyond.</p>
-    <button onclick="window.open('https://www.example.com/publications', '_blank')">Explore My Work</button>
+  <!-- Introduction Section -->
+  <div class="container">
+    <div class="intro">
+      <h2>Welcome to My Portfolio</h2>
+      <p>Discover my work, innovations, and projects in aerospace engineering and beyond.</p>
+    </div>
+
+    <!-- Project Grid Section -->
+    <div class="project-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="C-17 Globemaster III">
+        <h3>C-17 Globemaster III</h3>
+        <p>Optimized wing capacity and solved flight control issues using advanced ANSYS simulations.</p>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Winglet Efficiency Design">
+        <h3>Winglet Efficiency Design</h3>
+        <p>Enhanced aerodynamic efficiency by redesigning winglets for modern aircraft.</p>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="3D Aerospace Prototypes">
+        <h3>3D Aerospace Prototypes</h3>
+        <p>Created precise 3D models for aerospace components, ensuring reliability and accuracy.</p>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Structural Analysis">
+        <h3>Structural Analysis</h3>
+        <p>Performed structural analysis to enhance safety and performance in aerospace systems.</p>
+      </div>
+    </div>
   </div>
 
-  <div class="project-grid">
-    <div class="project-card">
-      <img src="https://via.placeholder.com/400x200" alt="C-17 Globemaster III">
-      <h3>C-17 Globemaster III</h3>
-      <p>Optimized wing capacity and solved flight control issues using advanced ANSYS simulations.</p>
-    </div>
-    <div class="project-card">
-      <img src="https://via.placeholder.com/400x200" alt="Winglet Efficiency Design">
-      <h3>Winglet Efficiency Design</h3>
-      <p>Enhanced aerodynamic efficiency by redesigning winglets for modern aircraft.</p>
-    </div>
-    <div class="project-card">
-      <img src="https://via.placeholder.com/400x200" alt="3D Aerospace Prototypes">
-      <h3>3D Aerospace Prototypes</h3>
-      <p>Created precise 3D models for aerospace components, ensuring reliability and accuracy.</p>
-    </div>
-    <div class="project-card">
-      <img src="https://via.placeholder.com/400x200" alt="Structural Analysis">
-      <h3>Structural Analysis</h3>
-      <p>Performed structural analysis to enhance safety and performance in aerospace systems.</p>
-    </div>
-  </div>
-
+  <!-- Footer Section -->
   <footer>
-    <p>&copy; 2024 Kiruthikeswaran Rajaram. Built with dedication and creativity.</p>
+    <p>&copy; 2024 Kiruthikeswaran Rajaram. Built with dedication and creativity. <a href="mailto:krish@example.com">Contact Me</a></p>
   </footer>
 
   <script>
@@ -225,6 +284,5 @@
       menu.classList.toggle('active');
     });
   </script>
-
 </body>
 </html>
