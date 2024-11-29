@@ -18,145 +18,113 @@
       line-height: 1.6;
       color: #333;
       background-color: #f4f4f9;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 10px;
     }
 
+    /* Sticky Header */
     header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 20px;
       background: white;
-      color: #333;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 1200px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: 400;
-      text-transform: capitalize;
-    }
-
-    .menu-toggle {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      cursor: pointer;
-    }
-
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background: #333;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
     }
 
     .menu {
-      display: none;
-      position: absolute;
-      top: 55px;
-      left: 0;
-      width: 100%;
-      background: #333;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 0;
-      border-radius: 0 0 8px 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .menu.active {
       display: flex;
+      gap: 20px;
     }
 
     .menu a {
-      color: white;
       text-decoration: none;
-      font-size: 1rem;
-      margin: 8px 0;
+      color: #333;
       transition: color 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     .menu a:hover {
       color: #007bff;
     }
 
-    .menu img {
+    .menu-icons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .menu-icons img {
       width: 25px;
       height: 25px;
     }
 
-    @media (min-width: 768px) {
-      .menu-toggle {
-        display: none;
-      }
-
-      .menu {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        gap: 20px;
-        padding: 0;
-        box-shadow: none;
-        border-radius: 0;
-        width: auto;
-        background: transparent;
-      }
-
-      .menu a {
-        margin: 0;
-        color: #333;
-      }
-
-      .menu a:hover {
-        color: #007bff;
-      }
-    }
-
     /* Introduction Section */
-    .container {
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+    .intro {
+      position: relative;
+      height: 90vh;
+      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
     }
 
-    .intro {
-      text-align: center;
-      margin-bottom: 30px;
-      padding: 30px;
-      color: white;
-      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    .intro-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .intro-content {
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      padding: 0 20px;
     }
 
     .intro h2 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+      font-size: 3rem;
+      margin-bottom: 15px;
     }
 
     .intro p {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
 
     /* Project Grid */
+    .container {
+      padding: 40px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .project-section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: #333;
+    }
+
     .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 15px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .project-card {
+      flex: 1;
       background: white;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -171,7 +139,7 @@
 
     .project-card img {
       width: 100%;
-      height: 300px; /* Increased height for a larger image */
+      height: 250px;
       object-fit: cover;
     }
 
@@ -187,16 +155,13 @@
       color: #555;
     }
 
-    /* Footer Section */
+    /* Footer */
     footer {
       background: #333;
       color: white;
       text-align: center;
       padding: 15px;
-      margin-top: 20px;
-      border-radius: 8px;
       width: 100%;
-      max-width: 1200px;
     }
 
     footer a {
@@ -211,38 +176,38 @@
   </style>
 </head>
 <body>
-
   <!-- Header Section -->
   <header>
     <div class="logo">Kiruthikeswaran Rajaram - Design Engineer, M.A.E.</div>
-    <div class="menu-toggle" id="menu-toggle">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="menu" id="menu">
+    <div class="menu">
       <a href="#home">Home</a>
       <a href="resume.html" target="_blank">Resume</a>
       <a href="giving-back.html" target="_blank">Giving Back</a>
       <a href="contact.html" target="_blank">Contact</a>
       <a href="#about">About</a>
-      <a href="https://www.linkedin.com/in/kiruthikeswaran" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-      </a>
-      <a href="https://github.com/kiruthikeswaran" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
-      </a>
+      <div class="menu-icons">
+        <a href="https://www.linkedin.com/in/kiruthikeswaran" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/kiruthikeswaran" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- Introduction Section -->
-  <div class="container">
-    <div class="intro">
+  <div class="intro">
+    <div class="intro-overlay"></div>
+    <div class="intro-content">
       <h2>Welcome to My Portfolio</h2>
       <p>Discover my work, innovations, and projects in aerospace engineering and beyond.</p>
     </div>
+  </div>
 
-    <!-- Project Grid Section -->
+  <!-- Project Section -->
+  <div class="container">
+    <h2 class="project-section-title">Recent Showcase</h2>
     <div class="project-grid">
       <!-- Project 1 -->
       <div class="project-card">
@@ -278,14 +243,5 @@
   <footer>
     <p>&copy; 2024 Kiruthikeswaran Rajaram. Built with dedication and creativity. <a href="mailto:krish@example.com">Contact Me</a></p>
   </footer>
-
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
