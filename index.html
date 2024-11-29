@@ -66,10 +66,11 @@
     }
 
     .hero img {
-      width: 100%;
+      width: calc(100% - 40px); /* Adjust width to account for padding */
       height: 500px;
       object-fit: cover;
       filter: brightness(0.5);
+      margin: 0 20px; /* Adds padding-like effect to the sides */
     }
 
     .hero .overlay-text {
